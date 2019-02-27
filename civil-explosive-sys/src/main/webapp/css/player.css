@@ -1,0 +1,52 @@
+@CHARSET "UTF-8";
+
+.div_flv_group{
+	margin:1px;float:left;border:0px solid #aaa;
+}
+
+.div_flv_group > div{
+	float:left;
+	width:640px;
+	height:480px;
+}
+
+
+.div_flv_group  .ptz_div{
+	text-align:center;
+}
+
+.div_flv_group  .ptz_div > a.ptz_icon_up{
+	background: url("../images/ctrl_up.png") no-repeat;
+}
+.div_flv_group  .ptz_div > a.ptz_icon_down{
+	background: url("../images/ctrl_down.png") no-repeat;
+}
+	
+.div_flv_group  .ptz_div > a.ptz_icon_left{
+	background: url("../images/ctrl_left.png") no-repeat;
+}
+
+.div_flv_group  .ptz_div > a.ptz_icon_right{
+	background: url("../images/ctrl_right.png") no-repeat;
+}
+.div_flv_group  .ptz_div > a.ptz_icon_zoomin{
+	background: url("../images/ctrl_zoom_in.png") no-repeat;
+}
+	
+.div_flv_group  .ptz_div > a.ptz_icon_zoomout{
+	background: url("../images/ctrl_zoom_out.png") no-repeat;
+}
+	
+.div_flv_group  .ptz_div > a.ptz_icon{
+	display: inline-block;
+	cursor:pointer;
+	width:24px;
+	height:24px;
+	margin:12px;
+	
+}
+
+.div_flv_group  .ptz_div > a.ptz_icon:active{
+	border1:1px solid #000;
+	background-color:#ccc;
+}

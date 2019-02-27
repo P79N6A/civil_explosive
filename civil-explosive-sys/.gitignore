@@ -1,0 +1,10 @@
+*.class
+*.war
+.classpath
+.project
+.settings
+WebContent/WEB-INF/classes
+build/classes
+*.log
+*.iml
+target

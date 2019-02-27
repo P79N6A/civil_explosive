@@ -1,0 +1,92 @@
+@charset "utf-8";
+/*******************登陆模块***********************/
+.login_panel{
+	background: url("../images/login_bg1.png") repeat;
+	position: absolute;
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+}
+
+.login_panel .login_header{
+	height:200px;
+	position: relative;
+}
+
+.login_header .header_box{
+	position: absolute;
+	bottom:0px;
+	text-align:center;
+	width:100%;
+}
+
+.header_box span.header_text{
+	font-size:36px;font-weight:bold;color:#fff;
+}
+
+.login_panel  .login_body{
+	height:50%;
+	margin:auto;
+}
+
+.login_body img.logo{
+	height:80%;
+	float:right;
+	vertical-align: middle;
+	position:absolute;
+	bottom:0px;
+	right:40px;
+}
+
+.login_body .login_group{
+	height:100%;
+	width:50%;
+	float:left;
+	background1:#f00;
+	position: relative;
+}
+
+.login_body .login_form{
+	position:absolute;
+	left:00px;
+	bottom:0px;
+	height:280px;
+	width:320px;
+	background-color:#fff;
+	text-align:center;
+	border-radius: 10px;
+	box-shadow: 0px 0px 15px 0px #666666;
+}
+
+.login_form .login_text_box{
+	font-size:16px;
+}
+
+.login_form .div_check_code{
+	margin:auto;margin-top:10px;text-align:center;
+}
+
+.login_form img.checkcode{
+	vertical-align: middle;
+	cursor: pointer;
+	margin-left:20px;
+	margin-top:8px;
+}
+
+.login_form #login_msg{
+	color:red;
+	font-size:16px;
+	margin-top:6px;
+}
+
+.login_panel  .login_footer{
+	text-align:center;
+	position: absolute;
+	bottom:80px;
+	width:100%;
+	color:#fff;
+}
+
+
+

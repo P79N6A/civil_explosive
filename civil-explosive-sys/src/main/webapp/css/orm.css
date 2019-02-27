@@ -1,0 +1,47 @@
+@CHARSET "UTF-8";
+
+.ormTable{
+		border-collapse: collapse;
+		table-layout: fixed;
+		min-height: 300px;
+		border:1px solid #aaa;
+		font-size:16px;
+	}
+	
+	.ormTable td{
+		border:1px solid #aaa;
+	}
+	
+	.divTable{
+		border:1px solid #666;
+		min-width: 140px;
+		margin:2px;
+		padding:2px;
+		text-align:left;
+		float:left;
+		cursor: pointer;
+	}
+	
+	.divTableFocus{
+		border:1px solid red;
+		font-weight:700;
+	}
+	
+	.divPackage{
+		border-collapse: collapse;
+		table-layout: fixed;
+		width:95%;
+		border:1px solid #555;
+		margin:auto;
+		margin-top:5px;
+		
+	}
+	
+	.divPackageFocus{
+		background-color: #eee;
+	}
+	
+	.divPackage .cTable{
+		height: 30px;
+		
+	}

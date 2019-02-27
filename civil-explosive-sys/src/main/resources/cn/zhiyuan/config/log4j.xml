@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE log4j:configuration SYSTEM "http://toolkit.alibaba-inc.com/dtd/log4j/log4j.dtd">  
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">  
+    <!-- 日志文件输出设置 -->  
+    <appender name="D" class="org.apache.log4j.DailyRollingFileAppender">  
+		<param name="file" value="${catalina.home}/logs/log4j/garen.log"/>  
+        <param name="append" value="true"/>  
+        <param name="encoding" value="GBK"/>  
+        <layout class="org.apache.log4j.PatternLayout">  
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS} %c %L [%t] %m%n"/>  
+        </layout>  
+    </appender>  
+	<appender name="R" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="${catalina.home}/logs/log4j/garen.log" />
+		<param name="Appender" value="true"/>
+		<param name="MaxFileSize" value="100MB" />
+        <param name="encoding" value="GBK"/>  
+		<param name="MaxBackupIndex" value="20" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS} %c %p %L [%t] %m%n" />
+		</layout>
+	</appender>
+    <!--控制台输出设置--> 
+    <appender name="stdout" class="org.apache.log4j.ConsoleAppender">  
+        <param name="encoding" value="utf-8"/>  
+        <layout class="org.apache.log4j.PatternLayout">  
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS} %c %p %L [%t] %m%n"/>  
+        </layout>  
+    </appender>  
+    <appender name="AsyncOut" class="org.apache.log4j.AsyncAppender">    
+		<param name="BufferSize" value="512" />    
+		<appender-ref ref="R" />    
+	</appender>   
+	<logger name="org.springframework">
+        <level value="WARN"></level>
+    </logger>  
+    <logger name="org.apache.http">
+        <level value="WARN"></level>
+    </logger>   
+    <logger name="org.apache.commons.beanutils">
+        <level value="WARN"></level>
+    </logger> 
+    <!-- ===================================================================== -->  
+    <!-- Root logger 所有logger的基类，没有定义的logger将会使用root logger     -->  
+    <!-- ===================================================================== -->  
+    <root>  
+        <level value="debug"/>  
+        <appender-ref ref="stdout"/>  
+    </root>  
+</log4j:configuration>  
+

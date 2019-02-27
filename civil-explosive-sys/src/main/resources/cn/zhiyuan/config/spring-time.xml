@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:lang="http://www.springframework.org/schema/lang"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd 
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+            http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-3.2.xsd">
+   
+   <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>    
+				 <ref local="schedule_video"/>  
+				 <ref local="schedule_cleanlog"/>  
+			</list>  
+		</property>
+		<property name="configLocation" value="classpath:cn/zhiyuan/config/quartz.properties" /> 
+		<property name="schedulerName" value="video"></property>
+	</bean>
+	
+	<bean id="schedule_video" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail"><ref bean="video_job"/></property>
+		<property name="cronExpression"><value>0/5 * * * * ?</value></property>
+	</bean>
+	
+	<bean id="schedule_cleanlog" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail"><ref bean="cleanLog_job"/></property>
+		<property name="cronExpression"><value>6 8 2 * * ?</value></property>
+	</bean>
+	
+	<!-- 视频设备状态同步 -->
+	<bean id="video_job"  class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject"><ref bean="videoExeBizImpl"/></property>
+		<property name="targetMethod"><value>watchExe</value></property>
+	</bean>
+	
+	<!-- 日志清理备份任务 -->
+	<bean id="cleanLog_job"  class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject"><ref bean="logJdbcBizImpl"/></property>
+		<property name="targetMethod"><value>cleanLog</value></property>
+	</bean>
+	
+</beans>

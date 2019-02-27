@@ -1,0 +1,224 @@
+@CHARSET "UTF-8";
+
+.app_panel{
+	position: absolute;
+	top:0px;
+	bottom:0px;
+	left:0px;
+	right:0px;
+	overflow: hidden;
+}
+
+/*******header******/
+.app_panel .app_header{
+	height:100px;
+	background: #0861b5 url('../images/index_logo_bk.png') no-repeat;
+	text-align: left;
+}
+
+.app_header .app_header_group{
+	float:left;
+	text-align:center;
+	height1:100%;
+	margin-top:24px;
+	color:#fff;
+}
+
+.app_header span.title{
+	font-size:32px;
+	margin-left:10px;
+	color:#fff;
+}
+
+.app_header .admin_panel{
+	float:right;
+	margin-right:30px;
+	width:200px;
+	margin-top:38px;
+}
+
+
+.admin_panel .app_header_icon{
+	vertical-align: middle;
+}
+
+.admin_panel span.icon_text{
+	font-size:14px;
+	color:#fff;
+}
+
+.admin_panel > span{
+	cursor: pointer;
+	margin:10px;
+}
+
+/*******header******/
+/*******main body******/
+
+.app_panel .app_body{
+	top:100px;
+	bottom:0px;
+	left:0px;
+	right:0px;
+	padding:3px;
+	position: absolute;
+	background-color: #fff;
+}
+
+/*图标*/
+.app_body .layout-button-left,.app_body .layout-button-right{
+	cursor: pointer;
+	display:inline-block;width:16px;height:16px;vertical-align: middle;
+}
+
+/***菜单面板--展开**/
+.app_body .div_layout_left_on{
+	box-sizing: border-box;
+	ms-box-sizing: border-box;
+	height:100%;
+	border:1px solid #95B8E7;
+	padding-top:33px;
+	float:left;
+	margin-right:3px;
+	width:260px;
+}
+
+.app_body .panel_banner_header{
+	border-bottom:1px solid #95B8E7;
+	margin-top:-33px;
+	text-align:center;
+	height:32px;
+	line-height:32px;
+	background-color: #E0ECFF;
+}
+
+.app_body .panel_banner_header .panel_title{
+	font-size:14px;
+	font-weight: bold;
+    color: #0E2D5F;
+    height: 16px;
+    line-height: 16px;
+}
+
+.panel_banner_header .panel_icon{
+	float:right;height:100%;margin-right:12px;
+}
+
+.div_layout_left_on .panel_menu_body{
+	height:100%;
+	overflow: auto;
+	border:none;
+}
+
+/***菜单折叠***/
+
+.app_body .div_layout_left_off{
+	width:27px;
+	box-sizing: border-box;
+	ms-box-sizing: border-box;
+	height:100%;
+	border:1px solid #95B8E7;
+	float:left;
+	background-color: #E0ECFF;
+	display:none;
+}
+
+.div_layout_left_off .panel_banner_header{
+	margin:0;
+	text-align:center;
+	border:none;
+}
+
+.app_body .panel_tabs_group{
+	border:0px solid red;margin-left:262px;height:100%;
+	padding:1px;
+	box-sizing: border-box;
+	ms-box-sizing: border-box;
+}
+
+/***菜单样式*****/
+.menu_panel .menu_header{
+	border-bottom:1px solid #95B8E7;
+	text-align:left;
+	height:32px;
+	line-height:32px;
+	background-color: #E0ECFF;
+}
+
+.menu_panel  .menu_header > .menu_title{
+	font-size:14px;
+	font-weight: bold;
+    color: #0E2D5F;
+    margin-left:26px;
+}
+
+.menu_panel  .menu_header_selected{
+	background-color: #ffff77;
+}
+
+.menu_panel .menu_icon_group{
+	float:right;
+	margin-right:12px;
+}
+
+.menu_panel .menu_icon_group > a{
+	display:inline-block;
+	width:16px;
+	height:16px;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.menu_panel .menu_body{
+	min-height: 20px;
+}
+
+.menu_panel .menu_body > a.menu_text{
+	display:block;
+	font-size:13px;
+	height:24px;
+	padding-left:38px;
+	cursor: pointer;
+	line-height: 24px;
+}
+
+.menu_panel .menu_body > a.menu_text:hover{
+	background-color: #eee;
+	font-weight: bold;
+}
+	
+.menu_panel .menu_body > a.menu_text_selected{
+	background-color: #ddd;
+}
+
+.app_body .notice_panel{
+	height:100%;
+	float:left;
+	box-sizing: border-box;
+	ms-box-sizing: border-box;
+	padding:6px;
+	padding-bottom:9px;
+}
+
+.app_body .task_notice_panel{
+	height:100%;
+	float:left;
+	box-sizing: border-box;
+	ms-box-sizing: border-box;
+	padding:6px;
+	padding-bottom:9px;
+}
+
+.app_body	.tools_download{
+	font-size:18px;
+	margin:3px;
+}
+
+.icon_hamburg_home {/*首页*/
+	background: url('../images/home.png') no-repeat center center;
+}
+
+.icon-refresh{
+	background:url('../images/refresh.png') no-repeat center center;
+}
+

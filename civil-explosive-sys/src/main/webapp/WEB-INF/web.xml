@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                      http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+ 
+  <display-name>civil-explosive-sys</display-name>
+  <welcome-file-list>
+    <welcome-file>index.do</welcome-file>
+  </welcome-file-list>
+  
+   <context-param>
+    <param-name>webAppRootKey</param-name>
+    <param-value>civil-explosive-sys</param-value>
+  </context-param>
+  
+  <!-- session过期时间 单位分钟 -->
+  <session-config>
+     <session-timeout>120</session-timeout>
+  </session-config>
+  
+  <context-param>
+    <param-name>log4jConfigLocation</param-name>
+    <param-value>file:${catalina.home}/conf/log4j.xml</param-value>
+  </context-param>
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:cn/zhiyuan/config/spring-core.xml</param-value>
+  </context-param>
+  
+  <filter> 
+    <display-name>SysFilter</display-name>
+    <filter-name>SysFilter</filter-name>
+    <filter-class>cn.zhiyuan.frame.filter.SysFilter</filter-class>
+    <init-param>
+      <description>登录</description>
+      <param-name>nologin</param-name>
+      <param-value>
+	      /,/loadJsp,/sys/sysuser/login.do,/css/loadCss.do,/loadJs\.do,/login.do,/loadui.do,/logout\.do,
+	      /sysconfig\.do,/logincode,/ormlist.do,/ormjsons,/convert,/sys/sysuser/loginGBK.do,
+	      /sys/ormtest.do,/camera/saveRecord.do,/camera/stopVideoCall.do
+      </param-value>
+    </init-param>
+    <init-param> 
+      <description>默认</description>
+      <param-name>nolimit</param-name>
+      <param-value>/.+\.do</param-value>
+    </init-param>
+  </filter>
+   
+  <filter-mapping>
+    <filter-name>SysFilter</filter-name>
+    <url-pattern>*.do</url-pattern>
+  </filter-mapping>
+
+  
+  <filter>
+    <filter-name>encodingFilter</filter-name>
+    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>utf-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>encodingFilter</filter-name>
+    <url-pattern>*.do</url-pattern>
+  </filter-mapping>
+  
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <listener>
+    <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+  </listener>
+  
+  <listener>
+    <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+  </listener>
+  
+  <servlet>
+    <servlet-name>spring-web</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>classpath:cn/zhiyuan/config/web-servlet.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>spring-web</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  
+</web-app>

@@ -1,0 +1,90 @@
+@CHARSET "UTF-8";
+
+
+
+body{margin:0;font-family:"微软雅黑", "Hiragino Sans GB", "Microsoft YaHei", tahoma, arial, simsun, ""}
+
+fieldset{
+	border:1px solid #ccc;
+	margin:0;
+	padding:0;
+}
+
+fieldset legend{
+	margin-left:12px;
+	font-size:14px;
+	font-weight: bold;
+	color:#000;
+}
+
+.icon_Modify_Pwd {/*修改密码*/
+	background: url('images/Change_Password.png') no-repeat center center;
+}
+
+
+.icon_arrow_down {/*菜单模块图标*/
+	background: url('images/arrow_down.png') no-repeat center center;
+}
+
+.icon_arrow_up {/*菜单模块图标*/
+	background: url('images/arrow_up.png') no-repeat center center;
+}
+
+/*遮罩*/
+.div_mask{
+	position: absolute;
+	background-color:#aaa;
+	top:3px;
+	left:3px;
+	right:3px;
+	bottom:3px;
+	filter: alpha(opacity=30);
+ 	opacity: 0.3;
+}
+
+span.datagrid_row_btn > a{
+	margin-left:8px;
+	margin-right:8px;
+	cursor: pointer;
+}
+
+span.datagrid_row_btn > a.row_btn1:hover{
+	color:blue;
+}
+
+span.datagrid_row_btn > a.row_btn2:hover{
+	color:red;
+}
+
+/*绝对布局*/
+.abs_layout{
+	position: absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+}
+
+.abs_layout .abs_panel{
+	float:left;
+	height:100%;
+	overflow: auto;
+}
+
+.icon_ctrl_left {
+	background: url('../images/arrow_left.png') no-repeat center center;
+}
+
+
+.icon_ctrl_right {
+	background: url('../images/arrow_right.png') no-repeat center center;
+}
+
+.icon_ctrl_up {
+	background: url('../images/arrow_up.png') no-repeat center center;
+}
+
+.icon_ctrl_down {
+	background: url('../images/arrow_down.png') no-repeat center center;
+}
+

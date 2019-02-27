@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:lang="http://www.springframework.org/schema/lang"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd 
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+            http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-4.3.xsd">
+                 
+     <context:component-scan base-package="cn.zhiyuan">  
+     	<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />  
+ 	 </context:component-scan>  
+            
+     <!--  数据源的配置 jndi  -->
+    <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+        <property name="jndiName" value="java:comp/env/jdbc/cesweb"></property>
+    </bean>
+     
+    <bean id="jdbctransactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource">
+			<ref bean="dataSource"/>
+		</property>
+	</bean>
+    
+    <!-- 注解事务 事务作用在接口上  -->
+    <tx:annotation-driven transaction-manager="jdbctransactionManager" />
+    <!-- 
+    <import resource="spring-time.xml" />
+     -->
+</beans>

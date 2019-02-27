@@ -1,0 +1,24 @@
+@CHARSET "UTF-8";
+
+table.log_parse{
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+table.log_parse td{
+	vertical-align: top;
+	border:1px solid #ddd;
+	padding:6px;
+}
+table.log_parse tr.odd{
+	background-color: #ccc;
+}
+
+table.log_parse tr.even{
+	background-color: #fff;
+}
+
+table.log_parse td.dateprefix{
+	width:180px;
+	text-align: center;
+}
+
